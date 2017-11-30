@@ -12,7 +12,8 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    CalendarPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,8 @@ import { FIREBASE_CONFIG } from './app.firebase.config';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+    CalendarPage
   ],
   providers: [
     StatusBar,
