@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CalendarModule } from 'ionic3-calendar';
 
 /**
  * Generated class for the CalendarPage page.
@@ -14,29 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'calendar.html',
 })
 export class CalendarPage {
-
-  eventSource = [];
-  viewTitle: string;
-  selectedDay = new Date();
-
-  calendar = {
-    mode: 'month',
-    currentDate: this.selectedDay
-  }
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-onViewTitleChanged(title) {
-  this.viewTitle = title;
-}
-
-onTimeSelected(ev) {
-
-}
-
-onEventSelected(event) {
-
-}
 
 }
