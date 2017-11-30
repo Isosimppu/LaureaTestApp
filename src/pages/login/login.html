@@ -17,7 +17,7 @@
 
 <ion-item>
   <ion-label floating>
-Email Address
+    Email Address
   </ion-label>
   <ion-input type="text" [(ngModel)]="user.email">
   </ion-input>
@@ -25,10 +25,18 @@ Email Address
 
 <ion-item>
     <ion-label floating>
-  Password
+      Password
     </ion-label>
     <ion-input type="password" [(ngModel)]="user.password">
     </ion-input>
   </ion-item> 
+
+  <button ion-button (click)="login()">
+    Login
+  </button>
+  
+  <button ion-button (click)="register()">
+    Register
+  </button>
 
 </ion-content>
