@@ -17,26 +17,27 @@ import { CalendarPage } from '../calendar/calendar';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
-  user = {} as User;
-
-  constructor(private afAuth: AngularFireAuth,
-    
-    public navCtrl: NavController, public navParams: NavParams) {
+  
+    user = {} as User;
+  
+    constructor(private afAuth: AngularFireAuth,
+      public navCtrl: NavController, public navParams: NavParams) {
+    }
+   
+    async login(user: User) {
+      try {
+        const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+        if (result) {
+          this.navCtrl.setRoot('CalendarPage');
+        }  
+      }
+      catch (e) {
+        console.error(e);
+      }
+    }
+   
+    register() {
+      this.navCtrl.push('RegisterPage');
   }
-
-async login(user: User) {
-  try {
-  const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
-  this.navCtrl.push('CalendarPage');
-}
-catch (e) {
-  console.error(e);
-}
-}
-
-register() {
-  this.navCtrl.push('RegisterPage');
-}
 
 }
