@@ -9,15 +9,12 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 import { MyApp } from './app.component';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 
-import { NgCalendarModule } from 'ionic2-calendar';
-
 @NgModule({
   declarations: [
     MyApp
   ],
   imports: [
     BrowserModule,
-    NgCalendarModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule
