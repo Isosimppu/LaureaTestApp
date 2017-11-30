@@ -15,11 +15,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CalendarPage {
 
+  eventSource = [];
+  viewTitle: string;
+  selectedDay = new Date();
+
+  calendar = {
+    mode: 'month',
+    currentDate: this.selectedDay
+  }
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CalendarPage');
-  }
+onViewTitleChanged(title) {
+  this.viewTitle = title;
+}
+
+onTimeSelected(ev) {
+
+}
+
+onEventSelected(event) {
+
+}
 
 }
