@@ -26,16 +26,16 @@ export class LoginPage {
    
     async login(user: User) {
       try {
-        const result = this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
-        if (result) {
-          this.navCtrl.setRoot('CalendarPage');
-        }  
+      const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
+      console.log(result);
+      if (result) {
+        this.navCtrl.setRoot('HomePage');
+        } 
       }
       catch (e) {
         console.error(e);
       }
     }
-   
     register() {
       this.navCtrl.push('RegisterPage');
   }
