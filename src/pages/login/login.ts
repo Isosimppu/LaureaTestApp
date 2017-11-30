@@ -24,18 +24,10 @@ export class LoginPage {
       public navCtrl: NavController, public navParams: NavParams) {
     }
    
-    async login(user: User) {
-      try {
-      const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
-      console.log(result);
-      if (result) {
-        this.navCtrl.setRoot('HomePage');
-        } 
-      }
-      catch (e) {
-        console.error(e);
-      }
+    login() { 
+      this.navCtrl.push('CalendarPage');
     }
+
     register() {
       this.navCtrl.push('RegisterPage');
   }
